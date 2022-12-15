@@ -1,0 +1,12 @@
+variables:
+     GIT_STRATEGY: none
+
+deploy:
+     stage: deploy
+     script:
+          - cd /home/someah/someah-web
+          - git pull origin web_v3
+          - /bin/php7.4 /bin/composer install
+          - /bin/php7.4 artisan migrate
+          - sudo supervisorctl restart all
+          - echo "Job Done"

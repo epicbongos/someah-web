@@ -1,0 +1,254 @@
+@extends('admin.layouts.layout')
+
+@section('content')
+    <div class="content">
+        <div class="page-inner">
+            <div class="page-header">
+                <h4 class="page-title">Data Pelatihan Pegawai</h4>
+                <ul class="breadcrumbs">
+                    <li class="nav-home">
+                        <a href="{{ url('admin/') }}">
+                            <i class="flaticon-home"></i>
+                        </a>
+                    </li>
+                    <li class="separator">
+                        <i class="flaticon-right-arrow"></i>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#">Ubah Data Pelatihan</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <form action="{{ url('/admin/training/update-training/update/' . $trainee->id) }}"
+                                method="post" enctype="multipart/form-data">
+                                {{ csrf_field() }}
+                                <div class="row">
+                                    <div class="col-md-5"
+                                        style="padding-right: 100px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="employee_id" class="mb-2 pb-2">Masukkan id pelatihan</label>
+                                            <br />
+                                            <input type="text" class="form-control w-100" name="employee_id"
+                                                id="employee_id" aria-describedby="helpId" placeholder="Masukkan Id"
+                                                value="{{ old('employee_id', @$trainee->employee_id) }}" />
+                                            @if ($errors->has('employee_id'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('employee_id') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-5"
+                                        style="padding-right: 100px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="nama_pelatihan" class="mb-2 pb-2">Masukkan Nama
+                                                Pelatihan</label>
+                                            <br />
+                                            <input type="text" class="form-control w-100" name="nama_pelatihan"
+                                                id="nama_pelatihan" aria-describedby="helpId"
+                                                placeholder="Masukkan Nama Peserta Pelatihan"
+                                                value="{{ old('nama_pelatihan', @$trainee->nama_pelatihan) }}" />
+                                            @if ($errors->has('nama_pelatihan'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('nama_pelatihan') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-3"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="tipe_pelatihan" class="mb-2 pb-2">Masukkan Tipe
+                                                Pelatihan</label>
+                                            <br />
+                                            <select class="form-controlz form-control " name="tipe_pelatihan"
+                                                id="tipe_pelatihan">
+                                                <option value="">Pilih Bank...</option>
+                                                <option value="Workshop"
+                                                    {{ old('tipe_pelatihan', @$trainee->tipe_pelatihan) == 'Workshop' ? 'selected' : '' }}>
+                                                    Workshop
+                                                </option>
+                                                <option value="Online Course"
+                                                    {{ old('tipe_pelatihan', @$trainee->tipe_pelatihan) == 'Online Course' ? 'selected' : '' }}>
+                                                    Online Course
+                                                </option>
+                                            </select>
+                                            @if ($errors->has('tipe_pelatihan'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('tipe_pelatihan') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="penyelenggaraan" class="mb-2 pb-2">Masukkan
+                                                penyelenggaraan</label>
+                                            <br />
+                                            <input type="text" class="form-control w-100" name="penyelenggaraan"
+                                                id="penyelenggaraan" aria-describedby="helpId"
+                                                placeholder="Masukkan penyelenggaraan"
+                                                value="{{ old('penyelenggaraan', @$trainee->penyelenggaraan) }}" />
+                                            @if ($errors->has('penyelenggaraan'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('penyelenggaraan') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="biaya" class="mb-2 pb-2">Masukkan biaya</label> <br />
+                                            <input type="text" class="form-control mask w-100" name="biaya" id="biaya"
+                                                data-type="currency" placeholder="Masukan biaya" aria-describedby="helpId"
+                                                placeholder="Masukkan biaya"
+                                                value="{{ old('biaya', @$trainee->biaya) }}" />
+                                            @if ($errors->has('biaya'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('biaya.0') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="laporan" class="mb-2 pb-2">Masukkan laporan</label> <br />
+                                            <input type="text" class="form-control w-100" name="laporan" id="laporan"
+                                                aria-describedby="helpId" placeholder="Masukkan laporan"
+                                                value="{{ old('laporan', @$trainee->laporan) }}" />
+                                            @if ($errors->has('laporan'))
+                                                <div class="alert alert-danger alert-dismissible fade show mt-3"
+                                                    role="alert">
+                                                    {{ $errors->first('laporan') }}
+                                                    <button type="button" class="close" data-dismiss="alert"
+                                                        aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                            @endif
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="mulai_pelatihan" class="mb-2 pb-2">Masukkan mulai
+                                                pelatihan</label>
+                                            <br />
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="mulai_pelatihan"
+                                                    name="mulai_pelatihan"
+                                                    value="{{ old('mulai_pelatihan',$trainee ? \Carbon\Carbon::createFromFormat('Y-m-d', @$trainee->mulai_pelatihan)->format('d/m/Y') : '') }}" />
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-calendar-check"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-3"
+                                        style="padding-right: 0px !important;padding-left: 0px !important;">
+                                        <div class="form-group">
+                                            <label for="akhir_pelatihan" class="mb-2 pb-2">Masukkan akhir
+                                                pelatihan</label>
+                                            <br />
+                                            <div class="input-group">
+                                                <input type="text" class="form-control" id="akhir_pelatihan"
+                                                    name="akhir_pelatihan"
+                                                    value="{{ old('akhir_pelatihan',$trainee ? \Carbon\Carbon::createFromFormat('Y-m-d', @$trainee->akhir_pelatihan)->format('d/m/Y') : '') }}" />
+                                                <div class="input-group-append">
+                                                    <span class="input-group-text">
+                                                        <i class="fa fa-calendar-check"></i>
+                                                    </span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row justify-content-end mr-2 mt-2">
+                                    <button type="submit" class="btn btn-success" style="padding: 8px 30px;">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+@endsection
+
+@push('extras-css')
+    <style>
+        .label {
+            position: absolute;
+            bottom: 10px;
+            text-align: center;
+            width: 100%;
+            color: white;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .changer:hover {
+            cursor: pointer;
+            background: linear-gradient(transparent 20%, #ccc 80%);
+        }
+
+    </style>
+@endpush
+
+@push('extras-js')
+    <script>
+        $('.changer').on('click', function() {
+            $('#ubahphoto').show();
+            $('#ubahphoto').on('change', function() {
+                var filename = $('#ubahphoto').val();
+                if (filename.substring(3, 11) == 'fakepath') {
+                    if (filename.length > 30) {
+                        filename = filename.substring(12, 30) + '...';
+                    } else {
+                        filename = filename.substring(12, 30);
+                    }
+                }
+                $('.changer').css('background', 'linear-gradient(transparent 20%, #ccc 80%)');
+                $(this).prev().html(filename);
+            });
+        });
+    </script>
+@endpush

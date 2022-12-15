@@ -1,0 +1,343 @@
+/* Color */
+.color-green {
+    color: #00A336 !important;
+}
+
+.bg-green {
+    background-color: #00A336 !important;
+}
+
+.color-black {
+    color: #373737 !important;
+}
+
+.bg-black {
+    background-color: #373737 !important;
+}
+
+.color-gray {
+    color: #7E8387 !important;
+}
+
+.bg-gray {
+    background-color: #7E8387 !important;
+}
+
+.color-lgreen {
+    color: #E9F9E1 !important;
+}
+
+.bg-lgreen {
+    background-color: #E9F9E1 !important;
+}
+
+.color-white {
+    color: #FFFFFF !important;
+}
+
+.bg-white {
+    border-color: #FFFFFF !important;
+}
+
+.color-darkgreen {
+    color: #0E9D4B;
+}
+
+.color-darkblack {
+    color: #000000;
+}
+
+.footer-underline {
+    background: #E8E8E8;
+    opacity: 0.9;
+}
+
+.back {
+    position: absolute;
+    right: 0;
+    top: -12px;
+}
+
+.nav-logo {
+    width: 140px;
+}
+
+
+body,
+html {
+    overflow-x: hidden;
+    padding: 0;
+    margin: 0;
+    background: #FAFAFA;
+}
+
+label.check-wrapper
+{
+    padding-left: 40px;
+}
+
+input[type=checkbox]
+{
+    position: absolute;
+    opacity: 0;
+}
+
+.check-wrapper {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 17px !important;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 7px !important;
+    height: 25px;
+    border: 1.3px solid #ccc;
+    width: 25px;
+}
+
+.check-wrapper:hover input~.checkmark {
+    background-color: #ccc;
+}
+
+.check-wrapper input:checked~.checkmark {
+    background-color: #0E9D4B;
+    border: 1.3px solid #0E9D4B;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.check-wrapper input:checked~.checkmark:after {
+    display: block;
+}
+
+.check-wrapper .checkmark:after {
+    left: 9px;
+    top: 5.5px;
+    width: 5px;
+    height: 10px;
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.wrapper-container {
+    margin-bottom: 40px !important;
+    margin-top: 190px !important;
+}
+
+.judul-page {
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin-bottom: 10px;
+    color: #343a40;
+    text-align: center;
+}
+
+.container
+{
+    min-width: 250px;
+}
+
+/* Hubungi Kami */
+
+.desc {
+    margin-top: 20px;
+    line-break: 30;
+}
+
+.estimasi {
+    background: #0E9D4B;
+    border: 1px solid #0D8D43;
+    color: white;
+    border-radius: 15px;
+    transition: .4s;
+    padding: 10px 50px;
+}
+
+.judul-section {
+    font-weight: 500;
+    font-size: 19.5pt;
+}
+
+.layanan-item:hover,
+.lingkup-item:hover {
+    cursor: pointer;
+}
+
+.upline {
+    width: 80px;
+    height: 2px;
+    margin-left: 2px;
+    background: #0E9D4B;
+}
+
+.col-md-5.layanan-item,
+.col-md-5.lingkup-item {
+    margin-right: 30px;
+    box-sizing: border-box;
+}
+
+.layanan-item>i,
+.lingkup-item>i {
+    position: absolute;
+    right: 18px;
+    color: #0E9D4B;
+    top: 18px;
+    font-size: 19px;
+    display: none;
+}
+
+.layanan-item>h5 {
+    margin-top: 20px;
+    text-align: center;
+    position: absolute;
+    bottom: 10px !important;
+}
+
+.lingkup-item>p {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 5px;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.layanan-item>img {
+    width: 130px;
+}
+
+.layanan-item,
+.lingkup-item {
+    padding-top: 20px;
+    padding-left: 20px;
+    padding-bottom: 10px;
+    padding-right: 20px;
+    margin-right: 10px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.lingkup-item:nth-child(2) {
+    margin-right: 0 !important;
+}
+
+label:nth-child(n+3) {
+    margin-top: 10px;
+}
+
+input:not(#infile),
+.custom-textarea
+{
+    border: none;
+    background: #F5F5F5;
+    border-radius: 7px;
+    padding-left: 50px;
+    padding: 10px 10px;
+    margin-bottom: 17px;
+}
+
+textarea {
+    width: 100%;
+    height: 180px;
+    border: none;
+    background: #F5F5F5;
+    border-radius: 7px;
+    padding-left: 10px;
+    padding-top: 12px;
+    margin-bottom: 17px;
+}
+
+label:not(.check-wrapper) {
+    margin-bottom: 12px;
+    font-weight: bold;
+    font-size: 20px;
+    color: #373737;
+    text-transform: capitalize;
+}
+
+.layanan-item.active,
+.lingkup-item.active {
+    border: 1px solid #0E9D4B;
+}
+
+.col-md-10 {
+    -ms-flex: 0 0 83.333333%;
+    flex: 0 0 81% !important;
+    max-width: 83.333333%;
+}
+
+.col-md-3 {
+    -ms-flex: 0 0 25%;
+    flex: 0 0 23.8% !important;
+    max-width: 25%;
+    height: 210px;
+    display: flex;
+    justify-content: center;
+}
+
+.col-md-5 {
+    -ms-flex: 0 0 48%;
+    flex: 0 0 48% !important;
+    height: 200px;
+    max-width: 49%;
+}
+
+.col-md-2 {
+    -ms-flex: 0 0 16.666667%;
+    flex: 0 0 18.9% !important;
+    max-width: 20%;
+}
+
+@media (max-width: 273px)
+{
+    .back-a {
+        font-size: 8px;
+        margin-top: 8px;
+    }
+
+    .navbar-brand>img {
+        width: 80px;
+    }
+}
+
+@media (min-width: 274px) and (max-width: 368px)
+{
+    .back-a {
+        font-size: 10px;
+        margin-top: 3px;
+    }
+
+    .navbar-brand>img {
+        width: 100px;
+    }
+}
+
+@media (min-width: 369px) and (max-width: 668px) {
+    .back-a {
+        font-size: 13px;
+        margin-top: 3px;
+    }
+
+    .navbar-brand>img {
+        width: 100px;
+    }
+}
